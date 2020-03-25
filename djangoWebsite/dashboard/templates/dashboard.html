@@ -1,11 +1,28 @@
-<h1>Dashboard</h1>
+{% load static  %}
 
-<a href="{% url 'logout' %}"><button>Logout</button></a>
+<html>
+	<head>
+		<title>Dashboard</title>
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/boootstrap/3.2.0/css/bootstrap-theme.min.css">
+		<link rel="stylesheet" href="{% static 'css/dashboard.css'  %}">
+	</head>
+	<body>
+		<div>
+			<h1>Dashboard</h1>
+		</div>
+		<div>
+			<select id="page" onchange="location = this.value;">
+			<option></option>
+			<option
+			value="{% url 'redirect' %}">Redirect</option>
+			<option
+ 			value="{% url 'site' %}">Site</option>
+			</select>
+		</div>
+		<div>
 
-<select id="cars" onchange="location = this.value;">Choose a car:
-	<option></option>
-	<option
-	value="{% url 'redirect' %}">Redirect</option>
-	<option
- value="{% url 'site' %}">Site</option>
-</select>
+			<a href="{% url 'logout' %}"><button>Logout</button></a>
+		</div>
+	</body>
+</html>
