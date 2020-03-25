@@ -1,3 +1,11 @@
 <h1>Dashboard</h1>
 
-<p><a href="{% url 'logout' %}">logout</a>.</p>
+<a href="{% url 'logout' %}"><button>Logout</button></a>
+
+<select id="cars" onchange="location = this.value;">Choose a car:
+	<option></option>
+	<option
+	value="{% url 'redirect' %}">Redirect</option>
+	<option
+ value="{% url 'site' %}">Site</option>
+</select>
